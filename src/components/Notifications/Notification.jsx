@@ -1,5 +1,5 @@
 
-const Notification = () => {
+const Notifications = () => {
   const createNotify = (message) => {
     // Let's check if the browser supports notifications
     if (!("Notification" in window)) {
@@ -28,9 +28,9 @@ const Notification = () => {
   
   return (
     <div>
-      <button onClick={createNotify}>Notificar</button>    
+      <button onClick={() => createNotify("Esta es la mejor notificación del mundo")}>Notificar</button>    
     </div>
   );
 }
 
-export default Notification;
+export default Notifications;
