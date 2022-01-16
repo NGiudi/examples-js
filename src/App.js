@@ -1,6 +1,7 @@
 import React from "react";
 
 import ExampleStatus from "./components/ConnectionStatus/ExampleStatus";
+import SetExample from "./Theory/Set";
 import Notification from "./utils/Notification";
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <>
       <Notification />
       <ExampleStatus />
+      <SetExample />
     </>
   );
 };
