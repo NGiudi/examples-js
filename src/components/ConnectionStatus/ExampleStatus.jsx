@@ -1,13 +1,13 @@
 import React from "react";
 
-import { OnlineStatusProvider, useOnlineStatus } from "./useOnlineStatus";
+import {
+  OnlineStatusProvider,
+  useOnlineStatus,
+} from "../../hooks/useOnlineStatus";
 
 const ExampleStatus = () => {
-
   const AppChildren = () => {
     const isOnline = useOnlineStatus();
-
-    console.log("dentro del componente:", isOnline);
 
     if (isOnline) {
       return <h1>Tenemos internet :)</h1>;

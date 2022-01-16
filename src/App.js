@@ -1,5 +1,7 @@
-import Notification from "./components/Notifications/Notification";
+import React from "react";
+
 import ExampleStatus from "./components/ConnectionStatus/ExampleStatus";
+import Notification from "./utils/Notification";
 
 const App = () => {
   return (
@@ -8,6 +10,6 @@ const App = () => {
       <ExampleStatus />
     </>
   );
-}
+};
 
 export default App;

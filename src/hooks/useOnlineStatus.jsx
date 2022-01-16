@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
 
 const OnlineStatusContext = React.createContext(true);
 
@@ -8,13 +9,10 @@ export const OnlineStatusProvider = (props) => {
   const [onlineStatus, setOnlineStatus] = useState(true);
 
   useEffect(() => {
-    console.log("useEffect");
     window.addEventListener("offline", () => {
-      console.log("offline");
       setOnlineStatus(false);
     });
     window.addEventListener("online", () => {
-      console.log("online");
       setOnlineStatus(true);
     });
 
@@ -38,4 +36,12 @@ export const OnlineStatusProvider = (props) => {
 export const useOnlineStatus = () => {
   const store = useContext(OnlineStatusContext);
   return store;
+};
+
+OnlineStatusProvider.propTypes = {
+  children: PropTypes.node,
+};
+
+OnlineStatusProvider.defaultProps = {
+  children: null,
 };
