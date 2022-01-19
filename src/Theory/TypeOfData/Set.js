@@ -1,10 +1,8 @@
-import React from "react";
-
 /* Set te permite crear una lista de valores sin duplicados, se puede utilizar en el lugar de arrays.
    Un set cuando manejar muchos datos suele ser mucho mmás rápido que manejar un array o un objeto.
 */
 
-const SetExample = () => {
+export const theorySet = () => {
   const carrito = new Set();
 
   /* Forma de agregar elementos. */
@@ -16,27 +14,17 @@ const SetExample = () => {
     o sea, que si se trata de eliminar un elemento que no existe, nos devolvera un valor false.
   */
   const success = carrito.delete("camisa");
+  console.log(`Se ha eliminado camisa del carrito? ${success}`);
 
   /* Forma de  eliminar todos los elementos. */
   carrito.clear();
+  console.log(`carrito.clear: ${carrito}`);
 
   /* Forma de saber la cantidad de elementos dentro del set. */
   const length = carrito.size;
-  console.log(length);
+  console.log(`cantidad de elementos en el set ${length}`);
 
   /* Forma de buscar si existe un elemento dentro del set. */
   const hasCamisa = carrito.has("camisa");
-
-  return (
-    <>
-      <h1>Teoría sobre Set</h1>
-      <p>Se elimino &quot;camisa&quot; con éxito? {success ? "Sí" : "No"}</p>
-      <p>
-        Existe el elemento &quot;camisa&quot; dentro del Set?{" "}
-        {hasCamisa ? "Sí" : "No"}
-      </p>
-    </>
-  );
+  console.log(`carrito contiene caamisa? ${hasCamisa}`);
 };
-
-export default SetExample;
